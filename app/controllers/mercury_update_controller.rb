@@ -25,4 +25,12 @@ class MercuryUpdateController < ApplicationController
     render plain: ""
   end
 
+  def update_landing_page_content
+    params[:mercury_update][:content].to_unsafe_h.map do |locale, value|
+      community_customization = CommunityCustomization.find_by(locale: locale)
+      community_customization.private_community_homepage_content = value[:value]
+      community_customization.save
+    end
+  end
+
 end

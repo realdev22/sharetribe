@@ -2,7 +2,19 @@
   = header
 %p.ingress
   = info_text
-.form-group
-  .multiple-languages-container
-    - translations.each do |language_key, value|
-      = render 'admin2/one_locale_input_field', input_name: input_name, language_key: language_key, value: value, input_classes: input_classes
+%label.openInEditor{for: "privateMarketplaceInstructionText"}
+  %a{id: "edit_link", href: "/editor" + request.path, disable: true, data: { save_url: mercury_update_landing_page_content_path }}
+    = image_tag 'svg/edit.svg', class: %i[edit-icon], alt: 'edit'
+    = t('admin2.privacy.open_in_editor')
+- if translations && !params[:mercury_frame]
+  .form-group
+    .multiple-languages-container-value
+      - translations.each do |language_key, value|
+        %p
+          %b= value[:language]
+          = value[:translation].html_safe if value[:translation]
+- if params[:mercury_frame]
+  .form-group
+    .multiple-languages-container
+      - translations.each do |language_key, value|
+        = render 'admin2/one_locale_input_field', language: value[:language], language_key: language_key, value: value[:translation]

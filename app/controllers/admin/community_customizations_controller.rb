@@ -97,7 +97,8 @@ class Admin::CommunityCustomizationsController < Admin::AdminBaseController
       slogan: @current_community.slogan,
       description: @current_community.description,
       search_placeholder: t("homepage.index.what_do_you_need", locale: locale),
-      locale: locale
+      locale: locale,
+      private_community_homepage_content: @current_community.private_community_homepage_content
     )
   end
 

@@ -975,6 +975,7 @@ en:
       header: 'Private marketplace landing page content'
       private: 'Allow only registered users to see listings and user profiles (make marketplace private)'
       info_text: 'This content is shown on the homepage of private marketplaces to users who are not logged in. Here you can describe your marketplace and the process to join it.'
+      open_in_editor: 'Open in editor'
     essentials:
       header_link: 'Preview your Marketplace'
       header: 'Basic marketplace details'

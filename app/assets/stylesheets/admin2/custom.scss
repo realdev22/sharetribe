@@ -193,3 +193,9 @@ a.js-listing-shape-add-custom-unit-link.listing-shape-add-custom-unit-link.opaci
     order: 3;
   }
 }
+
+label.openInEditor {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
