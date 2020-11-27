@@ -1,10 +1,10 @@
 version: 2.1
 jobs:
   test:
-    parallelism: 16
+    parallelism: 8
     # Call bash as interactive login shell to make sure nvm is loaded through .bashrc
     shell: /bin/bash -ileo pipefail
-    resource_class: small
+    resource_class: medium
     docker:
       - image: circleci/ruby:2.6.5-buster-browsers-legacy
         environment:
